@@ -13,8 +13,12 @@ var bodyParser =require('body-parser');
 const http = require('http');
 var db = require('./models/db_controller');
 var signup = require('./controllers/signup');
-var login = require('./controllers/login')
-var verify = require('./controllers/verify')
+var login = require('./controllers/login');
+var verify = require('./controllers/verify');
+var reset = require('./controllers/reset_controller');
+var doctors = require('./controllers/doc_controller'); 
+var employee = require('./controllers/employee'); 
+
 
 var app = express();
 
@@ -31,5 +35,9 @@ server.listen(PORT,()=>console.log('server running on port ${PORT}'))
 app.use('/signup', signup);
 app.use('/login', login);
 app.use('/verify', verify);
+app.use('/reset', reset);
+app.use('/doctor', doctors);
+app.use('/employee', employee);
+
 
 
